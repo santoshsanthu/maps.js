@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     def create
     @book = Book.new(books_params)
    if @book.save
-     flash[:msg]="successfully created"
+     flash[:notice]="successfully created"
    end
     else
     redirect_to @book
@@ -24,10 +24,10 @@ class BooksController < ApplicationController
     def update
       @book = Book.find(params[:id])
       if @book.update_attributes(books_params)
-        flash[:msg] = "updated successfully"
+        flash[:notice] = "updated successfully"
       end
+    else
       redirect_to @book
-
     end
 
     def show

@@ -8,7 +8,7 @@
 </head>
 <body>
 <% flash.each do |k,msg|%>
-  <%= msg%>
+    <div class="notice-<%= k %>"><%= msg %></div>
   <%end%>
 <%= yield %>
 
