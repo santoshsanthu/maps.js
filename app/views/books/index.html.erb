@@ -1,0 +1,27 @@
+<table border="1">
+  <thead>
+  <tr>
+    <th>Name::</th>
+    <th>publisher::</th>
+    <th>no_of_books::</th>
+    <th>Phone::</th>
+    <th>Email::</th>
+  </tr>
+  </thead>
+  <% @books.each do |book|%>
+      <tbody>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.no_of_books %></td>
+        <td><%= book.phone %></td>
+        <td><%= book.email %></td>
+        <td><%= link_to "show", book %></td>
+        <td><%= link_to "edit",edit_book_path(book)  %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </tbody>
+      <%end%>
+</table>
+
+<%= link_to "new", new_book_path %>
